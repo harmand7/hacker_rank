@@ -9,10 +9,9 @@ public class DetectACycle {
 	}
 
 	boolean hasCycle(Node head) {
-		return head != null && hasCycle(head, new ArrayList<>());
-	}
-
-	private boolean hasCycle(Node node, ArrayList<Node> list){
+		if (head == null) {return false;}
+		ArrayList<Node> list = new ArrayList<>();
+		Node node = head;
 		list.add(node);
 		while (node.next != null){
 			node = node.next;
@@ -21,4 +20,5 @@ public class DetectACycle {
 		}
 		return false;
 	}
+
 }
